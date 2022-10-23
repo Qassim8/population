@@ -1,0 +1,480 @@
+/* Add Box Model */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* Make Page Scrolling More Smooth */
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Tajawal', sans-serif;
+}
+/* Add Css Variables */
+:root{
+    --main-color: #025939;
+    --overLay: #222c4073;
+    --alt-color: #038b59;
+    --main-background: #f5ebeb;
+    --mainTransition: 0.4s;
+}
+/* Main Head */
+.main-head{
+    background-color: var(--main-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.main-head i{
+    color: white;
+    margin-right: 10px;
+}
+.main-head h2{
+    margin: 0 auto;
+}
+/* Main Footer */
+footer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+/* Create Container To Make Responsive Element In Defferent Screen*/
+.container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media(min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+@media(min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+@media(min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/* Start Login & Register*/
+.first{
+    position: relative;
+    height: 100vh;
+    background-image: url(../images/baby4.jpg);
+    background-size: cover;
+    
+}
+.second{
+    position: absolute;    
+    background-image: url(../images/baby5.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+.first::before
+,.second::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overLay);
+    
+}
+.first .login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #efefef96;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    width: 500px;
+    max-width: calc(100% - 15px);
+    border-radius: 3px;
+}
+.second .register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #efefefab;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    max-width: calc(100% - 15px);
+    border-radius: 3px;
+}
+.second .register a:first-of-type{
+    color: var(--main-color);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+}
+.first .login h2
+,.second .register h2{
+    color: var(--main-color);
+}
+.first .login input
+,.second .register input{
+    margin: 15px 3px 0;
+    padding: 8px;
+    max-width: 100%;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    outline: none;
+}
+.first .login input{
+    width: 350px;
+}
+.second .register input{
+    width: 220px;
+}
+.second .register input[type='email']{
+    width: 450px;
+}
+@media(max-width: 767px){
+.first .login input
+,.second .register input{
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 0;
+}
+.second .register input[type='email']{
+    width: 422px;
+    max-width: 100%;
+}
+}
+.first .login input::placeholder
+,.second .register input::placeholder{
+    font-weight: bold;
+    color: #868f97;
+    transition: 1s;
+}
+.first .login input:focus::placeholder
+,.second .register input:focus::placeholder{
+    opacity: 0;
+}
+.first .login input[type='submit']
+,.second .register input[type='submit']{
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: var(--mainTransition);
+}
+.first .login input[type='submit']:hover
+,.second .register input[type='submit']:hover{
+    background-color: var(--alt-color);
+}
+.first .login p{
+    font-size: 25px;
+    margin: 20px auto 15px;
+}
+.first .login a{
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--main-color);
+}
+.first .login a:hover{
+    color: var(--alt-color);
+}
+/* End Login & Register*/
+/* Start Home */
+
+.home .header{
+    background-color: var(--main-color);
+    margin: 0;
+    width: 100%;
+}
+.home .header .container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.home .header .container li{
+    padding: 20px;
+}
+.home .header .container li:hover{
+    background-color: var(--alt-color);
+}
+.home .header .container li a{
+    font-size: 20px;
+    color: white;
+}
+.home .services{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.home .services h2
+,.home .stats h2{
+    text-align: center;
+    color: var(--main-color);
+    font-size: 45px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+.home .services .srv-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home .services .srv-box .box{
+    background-color: var(--main-color);
+    color: white;
+    width: 300px;
+    text-align: center;
+    padding: 30px;
+    margin: 30px;
+    border-radius: 3px;
+    box-shadow: rgba(0,0,0,0.25)0px 25px 50px -12px;
+    transition: var(--mainTransition);
+}
+.home .services .srv-box .box:hover{
+    transform:translateY(-5%);
+    background-color: var(--alt-color);
+}
+.home .services .srv-box .box p{
+    font-size: 23px;
+    font-weight: bold;
+}
+
+@media(max-width: 767px){
+    .home .header .container {
+        justify-content: center;
+    }
+    .home .header .container li a{
+        font-size: 20px;
+    }
+    .home .services h2{
+        font-size: 30px;
+    }
+    .home .services .srv-box{
+        flex-direction: column;
+    }
+    .home .services .srv-box .box{
+        margin: 0 auto 30px;
+    }
+    .home .services .srv-box .box p{
+        font-size: 18px;
+    }
+}
+.home .stats{
+    background-color: var(--main-background);
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.home .stats .stat-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 10px;
+    margin-bottom: 50px;
+}
+.home .stats .stat-box .info{
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    color: var(--main-color);
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,0.25) 0px 7px 25px 2px;
+    transition: var(--mainTransition);
+}
+.home .stats .stat-box .info:hover{
+    background-color: var(--alt-color);
+    color: white;
+    transform: translate(1.5re);
+}
+.home .stat-box .info h3{
+    font-size: 30px;
+}
+.home .stat-box .info p{
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 0;
+}
+/* End Home */
+/* Start Borns & Dead & Pay*/
+.borns
+,.dead
+,.pay{
+    background-color: var(--main-background);
+    height: 100vh;
+}
+@media(max-width: 650px){
+    .dead
+    {
+        height: 1100px;
+    }
+    .borns
+    ,.pay{
+        height: 800px;
+    }
+}
+.borns .born-form
+,.dead .death
+,.pay .pay-form{
+    margin: 30px auto;
+}
+.borns .born-form span
+,.dead .death span
+,.pay .pay-form span{
+    margin: 8px 3px 5px 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #8a8f94;
+}
+.borns .born-form input
+,.dead .death input
+,.pay .pay-form input
+,.pay .pay-form select{
+    padding: 8px;
+    margin: 10px 0;
+    font-weight: bold;
+    width: 280px;
+    max-width: 100%;
+    border: none;
+    outline: none;
+}
+.borns .born-form .gender
+,.dead .death .gender{
+    display: flex;
+    width: 100px;
+}
+.dead .death .case{
+    display: flex;
+    width: 200px;
+}
+.borns .born-form input[type='submit']
+,.borns .born-form input[type='reset']
+,.dead .death input[type='submit']
+,.dead .death input[type='reset']
+,.pay .pay-form input[type='submit']
+,.pay .pay-form input[type='reset']{
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: var(--mainTransition);
+}
+.borns .born-form input::placeholder
+,.dead .death input::placeholder
+,.pay .pay-form input::placeholder
+,.pay .pay-form select option{
+    font-weight: bold;
+    color: #868f97;
+    transition: 1s;
+}
+.borns .born-form input:focus::placeholder
+,.dead .death input:focus::placeholder
+,.pay .pay-form input:focus::placeholder{
+    opacity: 0;
+}
+@media(max-width: 767px){
+.borns .born-form
+,.dead .death
+,.pay .pay-form{
+    text-align: center;
+}
+.borns .born-form .gender
+,.dead .death .gender
+,.dead .death .case{
+    position: relative;
+    left: -50%;
+    transform: translateX(50%);
+}
+}
+/* End Borns & Dead & Pay*/
+/* Start Popup */
+.popup{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #222c40ee;
+    text-align: center;
+    display: none;
+    z-index: 100;
+}
+.popup .fail-popup
+,.popup .suc-popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 30px;
+    width: 270px;
+    display: none;
+}
+.popup .suc-popup i:first-of-type
+,.popup .fail-popup i:first-of-type{
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    padding: 12px;
+    background-color: rgb(240, 42, 42);
+    color: white;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.popup .suc-popup i:last-of-type{
+    color: var(--alt-color);
+    padding: 15px 20px;
+    border: 2px solid var(--alt-color);
+    border-radius: 50%;
+}
+.popup .fail-popup i:last-of-type{
+    color: rgb(240, 42, 42);
+    padding: 15px 20px;
+    border: 2px solid rgb(240, 42, 42);
+    border-radius: 50%;
+}
+.popup .suc-popup a{
+    color: var(--alt-color);
+    font-size: 18px;
+    font-weight: bold;
+}
+.popup span{
+    font-size: 18px;
+}
+@media(max-width: 767px){
+    .popup{
+        min-height: 1000px;
+    }
+    .popup .fail-popup
+    ,.popup .suc-popup{
+        top: 20%;
+    }
+}
+/* End Popup */
